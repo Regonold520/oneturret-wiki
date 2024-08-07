@@ -30,30 +30,41 @@ header h1 {
     display: flex;
     margin: 20px auto;
     padding: 20px;
-    max-width: 1200px;
-    flex-direction: row;
+    max-width: 100%; /* Full width container */
+    position: relative; /* To manage the positioning of the TOCs */
 }
 
 .content {
-    flex: 1;
-    padding-right: 20px; /* Added padding to account for the TOC width */
+    flex: 1; /* Allow content to take up remaining space */
+    padding: 20px; /* Padding to avoid overlap with TOCs */
+    margin-left: 15%; /* Space for left TOC */
+    margin-right: 15%; /* Space for right TOC */
+    box-sizing: border-box; /* Ensure padding and margin don't overflow */
 }
 
-.sidebar {
+.sidebar-left, .sidebar-right {
     position: sticky;
     top: 70px; /* Position lower to account for the smaller header */
-    width: 250px; /* Width of the TOC */
     max-height: calc(100vh - 80px); /* Adjust height based on the top position */
-    padding-left: 10px;
-    border-left: 1px solid #ddd;
     overflow-y: auto;
+    background-color: #f6f8fa; /* Match the background */
+    z-index: 500; /* Ensure it stays above content */
 }
 
-.toc {
-    color: #6a737d; /* Gray text for TOC */
+.sidebar-left {
+    width: 15%; /* Responsive width of the left TOC */
+    left: 0; /* Align to the left side */
+    border-right: 1px solid #ddd;
+    text-align: right; /* Align text to the right */
 }
 
-.toc a {
+.sidebar-right {
+    width: 15%; /* Responsive width of the right TOC */
+    right: 0; /* Align to the right side */
+    border-left: 1px solid #ddd;
+}
+
+.sidebar-left a, .sidebar-right a {
     display: block;
     padding: 5px 10px;
     color: #6a737d; /* Gray text for TOC links */
@@ -61,11 +72,23 @@ header h1 {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.toc a.active {
+.sidebar-left a:hover, .sidebar-right a:hover {
+    background-color: #0366d6; /* Dark blue background on hover */
+    color: white; /* White text on hover */
+}
+
+.sidebar-left a.active, .sidebar-right a.active {
     font-weight: bold;
     background-color: #e1e4e8; /* Light gray background for active link */
     color: #0366d6; /* Dark blue text for active link */
     border-radius: 4px;
+}
+
+.sidebar-right .toc-title {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 .footer {
