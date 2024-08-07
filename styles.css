@@ -1,0 +1,89 @@
+﻿/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f8fa;
+    color: #333;
+}
+
+header {
+    background-color: #24292e;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    height: 50px; /* Shorter header */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 20px; /* Smaller header font size */
+}
+
+.container {
+    display: flex;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    flex-direction: row;
+}
+
+.content {
+    flex: 1;
+    padding-right: 20px; /* Added padding to account for the TOC width */
+}
+
+.sidebar {
+    position: sticky;
+    top: 70px; /* Position lower to account for the smaller header */
+    width: 250px; /* Width of the TOC */
+    max-height: calc(100vh - 80px); /* Adjust height based on the top position */
+    padding-left: 10px;
+    border-left: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.toc {
+    color: #6a737d; /* Gray text for TOC */
+}
+
+.toc a {
+    display: block;
+    padding: 5px 10px;
+    color: #6a737d; /* Gray text for TOC links */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.toc a.active {
+    font-weight: bold;
+    background-color: #e1e4e8; /* Light gray background for active link */
+    color: #0366d6; /* Dark blue text for active link */
+    border-radius: 4px;
+}
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+code {
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+}

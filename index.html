@@ -3,228 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Documentation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f6f8fa;
-            color: #333;
-        }
-        header {
-            background-color: #24292e;
-            color: white;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            height: 50px; /* Shorter header */
-        }
-        header h1 {
-            margin: 0;
-            font-size: 20px; /* Smaller header font size */
-        }
-        .container {
-            display: flex;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 1200px;
-        }
-        .content {
-            flex: 1;
-            padding-right: 270px; /* Adjusted for ToC width */
-        }
-        .sidebar {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            width: 250px;
-            max-height: 100vh;
-            padding-left: 10px;
-            border-left: 1px solid #ddd;
-            overflow-y: auto;
-            background-color: #ffffff; /* Ensure ToC background is white */
-            z-index: 1000;
-        }
-        .toc {
-            color: #6a737d; /* Gray text for TOC */
-        }
-        .toc a {
-            display: block;
-            padding: 5px 10px;
-            color: #6a737d; /* Gray text for TOC links */
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .toc a.active {
-            font-weight: bold;
-            background-color: #e1e4e8; /* Light gray background for active link */
-            color: #0366d6; /* Dark blue text for active link */
-            border-radius: 4px;
-        }
-        .toc h2 {
-            border-bottom: 2px solid #e1e4e8;
-            padding-bottom: 5px;
-            color: #6a737d; /* Gray text for TOC heading */
-        }
-        .footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
-        code {
-            background-color: #f0f0f0;
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-        pre {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-    </style>
+    <title>Home - Project Documentation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Project Documentation</h1>
-        </div>
-    </header>
-    
+<header>
     <div class="container">
-        <div class="content">
-            <section id="installation">
-                <h2>Installation</h2>
-                <p>To install the project, follow these steps:</p>
-                <pre><code>git clone https://github.com/your-repo/project.git
-cd project
-npm install</code></pre>
-                <p>Ensure that you have <a href="https://nodejs.org/" target="_blank">Node.js</a> installed on your system. You can download it from the official website.</p>
-            </section>
-            
-            <section id="usage">
-                <h2>Usage</h2>
-                <p>After installation, you can start the project by running:</p>
-                <pre><code>npm start</code></pre>
-                <p>This command will start a local development server. Open <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> in your browser to view the application.</p>
-                <p>For production, build the application using:</p>
-                <pre><code>npm run build</code></pre>
-                <p>Then, deploy the contents of the <code>dist</code> folder to your web server.</p>
-            </section>
-            
-            <section id="contributing">
-                <h2>Contributing</h2>
-                <p>We welcome contributions! To contribute to the project:</p>
-                <ol>
-                    <li>Fork the repository on GitHub.</li>
-                    <li>Clone your fork to your local machine.</li>
-                    <li>Create a new branch for your feature or bugfix.</li>
-                    <li>Make your changes and commit them.</li>
-                    <li>Push your changes to GitHub.</li>
-                    <li>Create a pull request with a detailed description of your changes.</li>
-                </ol>
-                <p>Please refer to our <a href="#contributing-guidelines">contributing guidelines</a> for more details.</p>
-            </section>
-            
-            <section id="license">
-                <h2>License</h2>
-                <p>This project is licensed under the MIT License. See the <a href="#license-file">LICENSE</a> file for more details.</p>
-                <p>The MIT License allows for both personal and commercial use. Please ensure that you include the license text in all copies or substantial portions of the software.</p>
-            </section>
-            
-            <section id="examples">
-                <h2>Examples</h2>
-                <p>Here are some examples of how to use the project:</p>
-                <h3>Example 1: Basic Usage</h3>
-                <pre><code>const example = require('project');
-example.doSomething();</code></pre>
-                <p>This example shows a basic use case of the library. Ensure that you have configured your environment properly.</p>
-                
-                <h3>Example 2: Advanced Usage</h3>
-                <pre><code>const example = require('project');
-example.configure({
-    option1: true,
-    option2: 'value'
-});
-example.run();</code></pre>
-                <p>This example demonstrates advanced configuration options. Refer to the API documentation for a detailed explanation of available options.</p>
-            </section>
-            
-            <section id="api">
-                <h2>API Reference</h2>
-                <p>The project provides the following API methods:</p>
-                <h3>Method: <code>doSomething()</code></h3>
-                <p>Performs a basic action. No parameters are required.</p>
-                
-                <h3>Method: <code>configure(options)</code></h3>
-                <p>Configures the project with the specified options.</p>
-                <pre><code>example.configure({
-    option1: true,
-    option2: 'value'
-});</code></pre>
-                <p>Refer to the <a href="#examples">Examples</a> section for practical use cases of this method.</p>
-            </section>
-            
-            <section id="troubleshooting">
-                <h2>Troubleshooting</h2>
-                <p>If you encounter issues, try the following steps:</p>
-                <h3>Issue 1: Installation Problems</h3>
-                <p>Ensure that you have the latest version of Node.js installed. Try running the installation commands again and check for error messages.</p>
-                
-                <h3>Issue 2: Application Not Starting</h3>
-                <p>Check if there are any port conflicts. Ensure that the development server is not already running on another instance.</p>
-                
-                <h3>Issue 3: Undefined Errors</h3>
-                <p>Verify that all dependencies are correctly installed and that there are no syntax errors in your code.</p>
-            </section>
-        </div>
+        <h1>Home - Project Documentation</h1>
+    </div>
+</header>
 
-        <div class="sidebar">
-            <div class="toc">
-                <h2>Table of Contents</h2>
-                <ul id="toc">
-                    <li><a href="#installation">Installation</a></li>
-                    <li><a href="#usage">Usage</a></li>
-                    <li><a href="#contributing">Contributing</a></li>
-                    <li><a href="#license">License</a></li>
-                    <li><a href="#examples">Examples</a></li>
-                    <li><a href="#api">API Reference</a></li>
-                    <li><a href="#troubleshooting">Troubleshooting</a></li>
-                </ul>
-            </div>
+<div class="container">
+    <div class="content" id="home">
+        <h2>Welcome to the Project Documentation</h2>
+        <p>This is the home page of the documentation. Navigate through the sections to learn more about the project.</p>
+        <h3>Overview</h3>
+        <p>Here is an overview of what this project is about...</p>
+        <h3>Getting Started</h3>
+        <p>Instructions for getting started with the project...</p>
+    </div>
+    <div class="sidebar">
+        <div class="toc">
+            <a href="#home" class="active">Home</a>
+            <a href="installation.html">Installation</a>
+            <a href="usage.html">Usage</a>
+            <a href="contributing.html">Contributing</a>
+            <a href="license.html">License</a>
+            <a href="examples.html">Examples</a>
+            <a href="api.html">API Reference</a>
+            <a href="troubleshooting.html">Troubleshooting</a>
         </div>
     </div>
+</div>
 
-    <div class="footer">
-        <p>© 2024 Project Name. All rights reserved.</p>
-    </div>
+<div class="footer">
+    <p>© 2024 Project Name. All rights reserved.</p>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tocLinks = document.querySelectorAll('.toc a');
-            const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
-
-            const observer = new IntersectionObserver((entries) => {
-                let activeIndex = -1;
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        activeIndex = sections.indexOf(entry.target);
-                    }
-                });
-
-                tocLinks.forEach((link, index) => {
-                    link.classList.toggle('active', index === activeIndex);
-                });
-            }, { threshold: [0.5] }); // Adjust the threshold as needed
-
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
+<script src="scripts.js"></script>
 </body>
 </html>
